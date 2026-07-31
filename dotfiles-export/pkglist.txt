@@ -145,6 +145,7 @@ noto-fonts-cjk
 noto-fonts-emoji
 nss-mdns
 opencl-mesa
+opencode
 openssh
 os-prober
 pacman-contrib
@@ -172,6 +173,7 @@ realtime-privileges
 rebuild-detector
 reflector
 ripgrep
+rofi
 rsync
 rustup
 s-nail
@@ -213,6 +215,7 @@ which
 wireplumber
 wl-clipboard
 wpa_supplicant
+wtype
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-user-dirs
