@@ -22,25 +22,31 @@ Personal dotfiles for a modern, fluid, and dynamic desktop setup built on **Cach
 ```text
 .
 ├── .config/
-│   ├── hypr/
-│   │   ├── hyprland.lua         # Main Hyprland Lua entry point
-│   │   ├── variables.lua        # Environment & system variables
-│   │   ├── xdph.conf            # XDG Desktop Portal Hyprland config
-│   │   ├── config/              # Modular Hyprland configs (binds, rules, inputs, etc.)
-│   │   ├── hyprland/            # Component configuration modules
-│   │   └── utils/               # Lua utility functions & JSON parser
-│   ├── caelestia/
-│   │   ├── hypr-user.lua        # Caelestia user Hyprland overrides
-│   │   ├── hypr-vars.lua        # Caelestia Hyprland keybind variables
-│   │   ├── shell.json           # Caelestia shell & UI configuration
-│   │   ├── user-config.fish     # Caelestia Fish shell integration
-│   │   └── monitors/            # Display monitor setup
-│   └── fish/
-│       └── config.fish          # Fish shell aliases, prompts, & integration
+│   ├── hypr/                    # Hyprland Lua window manager configs & scripts
+│   ├── caelestia/               # Caelestia shell, variables, and user overrides
+│   ├── fish/                    # Fish shell configuration & aliases
+│   ├── foot/                    # Foot terminal emulator config
+│   ├── starship.toml            # Starship cross-shell prompt configuration
+│   ├── fuzzel/                  # Fuzzel application launcher config
+│   ├── uwsm/                    # Universal Wayland Session Manager config
+│   ├── btop/                    # Btop resource monitor config & themes
+│   ├── fastfetch/               # Fastfetch system info layout
+│   ├── cava/                    # Cava audio visualizer config & shaders
+│   ├── micro/                   # Micro text editor keybinds & settings
+│   ├── yazi/                    # Yazi terminal file manager config & themes
+│   ├── Thunar/                  # Thunar file manager shortcuts & custom actions
+│   ├── gtk-3.0/ & gtk-4.0/      # GTK themes and custom CSS styling
+│   ├── qt5ct/, qt6ct/, qtengine/# Qt theme engine configs
+│   ├── fcitx5/                  # Fcitx5 input method configuration
+│   ├── kdeglobals               # KDE global appearance settings
+│   ├── mimeapps.list            # Default application associations
+│   └── user-dirs.dirs           # XDG user directory mappings
+├── Pictures/Wallpapers/         # Complete wallpaper image collection
 └── dotfiles-export/
     ├── pkglist.txt              # Native official repository packages
     └── aur-pkglist.txt          # Explicitly installed AUR packages
 ```
+
 
 ---
 
