@@ -58,21 +58,9 @@ paru -S caelestia-cli
 caelestia install
 ```
 
-### 2. Restore Software Packages
+### 2. Clone & Checkout Dotfiles
 
-Restore all native and AUR packages:
-
-```bash
-# Official repository packages
-sudo pacman -S --needed - < dotfiles-export/pkglist.txt
-
-# AUR packages
-paru -S --needed - < dotfiles-export/aur-pkglist.txt
-```
-
-### 3. Clone & Checkout Dotfiles
-
-Clone this repository using the bare Git repository method:
+Clone this repository using the bare Git repository method to restore your configuration files and package lists:
 
 ```fish
 git clone --bare git@github.com:CVK0406/dotfiles.git $HOME/.dotfiles
@@ -87,7 +75,20 @@ dotfiles checkout
 > dotfiles checkout
 > ```
 
+### 3. Restore Software Packages
+
+Now that `dotfiles-export/` has been checked out into your home directory, restore your packages:
+
+```bash
+# Official repository packages
+sudo pacman -S --needed - < ~/dotfiles-export/pkglist.txt
+
+# AUR packages
+paru -S --needed - < ~/dotfiles-export/aur-pkglist.txt
+```
+
 ### 4. Wallpapers & Scheme Generation
+
 
 Restore your wallpaper collection and generate your initial dynamic Caelestia color scheme:
 
