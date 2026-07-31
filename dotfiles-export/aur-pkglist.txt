@@ -1,0 +1,7 @@
+antigravity-ide
+caelestia-cli
+caelestia-firefox-theme
+caelestia-shell
+darkly-bin
+papirus-folders
+qtengine

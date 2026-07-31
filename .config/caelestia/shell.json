@@ -1,0 +1,60 @@
+{
+    "appearance": {
+        "transparency": {
+            "enabled": true
+        }
+    },
+    "background": {
+        "wallpaperEnabled": true
+    },
+    "bar": {
+        "activeWindow": {
+            "compact": true,
+            "inverted": false
+        },
+        "clock": {
+            "background": true,
+            "showDate": true
+        },
+        "popouts": {
+            "tray": true
+        },
+        "status": {
+            "showAudio": true,
+            "showBluetooth": false,
+            "showKbLayout": false,
+            "showLockStatus": true,
+            "showMicrophone": false,
+            "showWifi": false
+        },
+        "tray": {
+            "background": true,
+            "compact": true,
+            "recolour": true
+        },
+        "workspaces": {
+            "activeTrail": true,
+            "occupiedBg": false,
+            "showWindows": false,
+            "showWindowsOnSpecialWorkspaces": false
+        }
+    },
+    "dashboard": {
+        "performance": {
+            "showGpu": true
+        }
+    },
+    "general": {
+        "apps": {
+            "explorer": [
+                "yazi"
+            ]
+        }
+    },
+    "launcher": {
+        "showOnHover": false
+    },
+    "sidebar": {
+        "enabled": true
+    }
+}
