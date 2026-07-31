@@ -1,10 +1,64 @@
 #!/usr/bin/env python3
 import subprocess, sys
 
-# Keybind Cheatsheet for CachyOS + Hyprland + Caelestia
+# Sleek Dark Catppuccin Theme string for Rofi (Easy on the eyes)
+ROFI_THEME = """
+window {
+    width: 65%;
+    border-radius: 16px;
+    border: 2px;
+    border-color: #45475a;
+    background-color: #1e1e2e;
+    padding: 20px;
+    font: "JetBrainsMono Nerd Font 11";
+}
+mainbox {
+    background-color: transparent;
+}
+inputbar {
+    background-color: #181825;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 0px 0px 16px 0px;
+    children: [ prompt, entry ];
+}
+prompt {
+    text-color: #cba6f7;
+    margin: 0px 10px 0px 0px;
+    font: "JetBrainsMono Nerd Font Bold 11";
+}
+entry {
+    text-color: #cdd6f4;
+    placeholder-color: #6c7086;
+    placeholder: "Gõ để lọc phím tắt (ví dụ: terminal, workspace, screenshot, lock)...";
+}
+listview {
+    background-color: transparent;
+    lines: 16;
+    columns: 1;
+    spacing: 5px;
+    cycle: true;
+}
+element {
+    padding: 8px 14px;
+    border-radius: 8px;
+    background-color: transparent;
+    text-color: #cdd6f4;
+}
+element selected {
+    background-color: #313244;
+    text-color: #cba6f7;
+}
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+}
+"""
+
+# Complete, Categorized Keybind List from variables.lua
 BIND_GROUPS = [
     (
-        "🚀 APPS & LAUNCHER",
+        "🚀 ỨNG DỤNG (APPLICATIONS)",
         [
             ("Super", "󰍉", "Mở Caelestia App Launcher"),
             ("Super + T", "󰆍", "Mở Terminal (Foot)"),
@@ -15,38 +69,86 @@ BIND_GROUPS = [
         ],
     ),
     (
-        "🪟 WINDOW MANAGEMENT",
+        "🪟 QUẢN LÝ CỬA SỔ (WINDOW MANAGEMENT)",
         [
-            ("Super + Q", "󰅖", "Đóng cửa sổ (Close Window)"),
+            ("Super + Q", "󰅖", "Đóng cửa sổ đang chọn (Close Window)"),
             ("Super + F", "󰊓", "Bật / Tắt Toàn màn hình (Fullscreen)"),
+            ("Super + Alt + F", "󰊓", "Toàn màn hình có viền (Bordered Fullscreen)"),
             ("Super + Alt + Space", "󱂬", "Bật / Tắt Cửa sổ nổi (Floating)"),
-            ("Super + P", "󰤱", "Ghim cửa sổ (Pin Window)"),
-            ("Super + Z", "󰆾", "Di chuyển cửa sổ (Giữ chuột trái kéo)"),
-            ("Super + X", "󰆿", "Resize cửa sổ (Giữ chuột phải kéo)"),
+            ("Super + P", "󰤱", "Ghim cửa sổ trên cùng (Pin Window)"),
+            ("Ctrl + Super + \\", "󰉨", "Căn giữa cửa sổ (Center Window)"),
+            ("Ctrl + Super + Alt + \\", "󰁌", "Khôi phục kích thước chuẩn (Normalize Window)"),
+            ("Super + Alt + \\", "󰖔", "Chế độ xem video (Picture in Picture)"),
+            ("Super + Z", "󰆾", "Di chuyển cửa sổ (Giữ & Kéo chuột trái)"),
+            ("Super + X", "󰆿", "Thay đổi kích thước cửa sổ (Giữ & Kéo chuột phải)"),
             ("Super + ← / → / ↑ / ↓", "󰁍", "Di chuyển tiêu điểm cửa sổ (Focus Direction)"),
             ("Super + Shift + ← / → / ↑ / ↓", "󰜳", "Di chuyển cửa sổ theo hướng"),
+            ("Super + Minus / Equal", "󰤄", "Tăng / Giảm chiều rộng cửa sổ"),
+            ("Super + Shift + Minus / Equal", "󰤅", "Tăng / Giảm chiều cao cửa sổ"),
             ("Alt + Tab", "󰕰", "Chuyển sang cửa sổ tiếp theo"),
             ("Shift + Alt + Tab", "󰕱", "Chuyển sang cửa sổ phía trước"),
+            ("Super + ,", "󰕮", "Bật / Tắt Nhóm cửa sổ (Toggle Group)"),
+            ("Super + U", "󰕮", "Hủy nhóm cửa sổ (Ungroup)"),
         ],
     ),
     (
-        "󱂬 WORKSPACES",
+        "󱂬 WORKSPACES (MÀN HÌNH LÀM VIỆC)",
         [
             ("Super + 1 .. 9", "󰓩", "Chuyển đến Workspace 1 đến 9"),
             ("Super + Alt + 1 .. 9", "󰪹", "Di chuyển cửa sổ sang Workspace 1 đến 9"),
-            ("Super + S", "󱂬", "Bật / Tắt Workspace phụ (Scratchpad)"),
-            ("Super + M", "󰓇", "Workspace Âm nhạc (Music)"),
-            ("Super + D", "󰭹", "Workspace Trao đổi (Discord/Chat)"),
-            ("Super + R", "󰄲", "Workspace Công việc (Todo)"),
+            ("Ctrl + Super + 1 .. 9", "󰓪", "Chuyển Nhóm Workspace (Workspace Group)"),
+            ("Ctrl + Super + Alt + 1 .. 9", "󰪺", "Di chuyển cửa sổ sang Nhóm Workspace"),
             ("Super + Cuộn chuột", "󰛔", "Chuyển Workspace Kế tiếp / Trước đó"),
+            ("Super + S", "󱂬", "Bật / Tắt Workspace phụ (Scratchpad)"),
+            ("Super + Alt + S", "󰪹", "Đưa cửa sổ hiện tại vào Scratchpad"),
+            ("Ctrl + Shift + Esc", "󰢮", "Mở Workspace System Monitor (Btop)"),
+            ("Super + M", "󰓇", "Mở Workspace Âm nhạc (Music)"),
+            ("Super + D", "󰭹", "Mở Workspace Trao đổi (Discord/Chat)"),
+            ("Super + R", "󰄲", "Mở Workspace Công việc (Todo)"),
         ],
     ),
     (
-        "⚙️ SYSTEM & UTILITIES",
+        "📸 CHỤP ẢNH & QUAY MÀN HÌNH (MEDIA & CAPTURE)",
         [
+            ("PrintScreen", "󰹑", "Chụp toàn bộ màn hình (Screenshot)"),
+            ("Super + Shift + S", "󰹑", "Chụp đóng băng màn hình (Freeze Screenshot)"),
+            ("Super + Shift + Alt + S", "󰹑", "Chụp vùng chọn màn hình (Region Screenshot)"),
+            ("Ctrl + Alt + R", "󰑋", "Quay video màn hình (Screen Record)"),
+            ("Super + Alt + R", "󰑋", "Quay video màn hình kèm âm thanh"),
+            ("Super + Shift + Alt + R", "󰑋", "Quay video vùng chọn màn hình"),
+            ("Super + Shift + C", "󰏟", "Lấy màu màn hình (Color Picker)"),
+        ],
+    ),
+    (
+        "📋 CLIPBOARD & EMOJI",
+        [
+            ("Super + V", "󰅍", "Mở Lịch sử Clipboard"),
+            ("Super + Alt + V", "󰅍", "Xóa Lịch sử Clipboard"),
+            ("Ctrl + Shift + Alt + V", "󰅍", "Dán Clipboard mới nhất"),
+            ("Super + .", "󰞅", "Mở Bảng chọn Emoji"),
+        ],
+    ),
+    (
+        "🎵 ÂM THANH & MEDIA (AUDIO & MEDIA)",
+        [
+            ("Ctrl + Super + Space", "󰐎", "Phát / Dừng nhạc (Media Play/Pause)"),
+            ("Ctrl + Super + Equal", "󰒭", "Bài hát kế tiếp (Next Track)"),
+            ("Ctrl + Super + Minus", "󰒮", "Bài hát trước đó (Prev Track)"),
+            ("Ctrl + Super + Backspace", "󰓛", "Dừng phát nhạc (Stop Media)"),
+            ("Super + Shift + M", "󰝟", "Tắt tiếng (Mute Audio)"),
+        ],
+    ),
+    (
+        "⚙️ HỆ THỐNG & ĐIỀU KHIỂN (SYSTEM & CONTROL)",
+        [
+            ("Super", "󰍉", "Mở Caelestia App Launcher"),
+            ("Super + N", "󰍡", "Bật / Tắt Sidebar Thông báo (Notifications)"),
+            ("Ctrl + Alt + C", "󰎟", "Xóa tất cả thông báo"),
+            ("Super + K", "󰕮", "Hiện / Ẩn tất cả Panel Caelestia"),
             ("Super + L", "󰌾", "Khóa màn hình (Lock Screen)"),
-            ("PrintScreen", "󰹑", "Chụp ảnh màn hình (Screenshot)"),
-            ("Ctrl + Shift + Esc", "󰢮", "Mở System Monitor (Btop)"),
+            ("Super + Alt + L", "󰌾", "Khôi phục màn hình khóa (Restore Lock)"),
+            ("Super + Shift + L", "󰤄", "Chế độ ngủ (Sleep / Suspend)"),
+            ("Ctrl + Alt + Delete", "󰐥", "Mở Menu Nguồn & Đăng xuất (Session)"),
             ("Ctrl + Super + Shift + R", "󰑐", "Khởi động lại Caelestia Shell"),
         ],
     ),
@@ -60,19 +162,21 @@ for group_name, items in BIND_GROUPS:
 
 formatted_menu = "\n".join(lines)
 
-# Try rofi first, fallback to fuzzel if rofi is closed
 try:
     subprocess.run(
-        ["rofi", "-dmenu", "-i", "-p", "⌨️ Hyprland Keybinds Cheatsheet", "-l", "22"],
+        [
+            "rofi",
+            "-dmenu",
+            "-i",
+            "-p",
+            "⌨️ Hyprland Keybinds Cheatsheet",
+            "-l",
+            "18",
+            "-theme-str",
+            ROFI_THEME,
+        ],
         input=formatted_menu,
         text=True,
     )
-except FileNotFoundError:
-    try:
-        subprocess.run(
-            ["fuzzel", "-d", "-p", "⌨️ Keybinds: "],
-            input=formatted_menu,
-            text=True,
-        )
-    except Exception:
-        pass
+except Exception:
+    sys.exit(0)
