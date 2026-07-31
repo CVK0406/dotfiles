@@ -1,59 +1,7 @@
 #!/usr/bin/env python3
-import subprocess, sys
+import os, subprocess, sys
 
-# Sleek Dark Catppuccin Theme string for Rofi (Easy on the eyes)
-ROFI_THEME = """
-window {
-    width: 65%;
-    border-radius: 16px;
-    border: 2px;
-    border-color: #45475a;
-    background-color: #1e1e2e;
-    padding: 20px;
-    font: "JetBrainsMono Nerd Font 11";
-}
-mainbox {
-    background-color: transparent;
-}
-inputbar {
-    background-color: #181825;
-    border-radius: 10px;
-    padding: 12px 16px;
-    margin: 0px 0px 16px 0px;
-    children: [ prompt, entry ];
-}
-prompt {
-    text-color: #cba6f7;
-    margin: 0px 10px 0px 0px;
-    font: "JetBrainsMono Nerd Font Bold 11";
-}
-entry {
-    text-color: #cdd6f4;
-    placeholder-color: #6c7086;
-    placeholder: "Gõ để lọc phím tắt (ví dụ: terminal, workspace, screenshot, lock)...";
-}
-listview {
-    background-color: transparent;
-    lines: 16;
-    columns: 1;
-    spacing: 5px;
-    cycle: true;
-}
-element {
-    padding: 8px 14px;
-    border-radius: 8px;
-    background-color: transparent;
-    text-color: #cdd6f4;
-}
-element selected {
-    background-color: #313244;
-    text-color: #cba6f7;
-}
-element-text {
-    background-color: transparent;
-    text-color: inherit;
-}
-"""
+THEME_PATH = os.path.expanduser("~/.config/rofi/cheatsheet.rasi")
 
 # Complete, Categorized Keybind List from variables.lua
 BIND_GROUPS = [
@@ -124,7 +72,7 @@ BIND_GROUPS = [
         [
             ("Super + V", "󰅍", "Mở Lịch sử Clipboard"),
             ("Super + Alt + V", "󰅍", "Xóa Lịch sử Clipboard"),
-            ("Ctrl + Shift + Alt + V", "󰅍", "Dán Clipboard mới nhất"),
+            ("Ctrl + Shift + ALT + V", "󰅍", "Dán Clipboard mới nhất"),
             ("Super + .", "󰞅", "Mở Bảng chọn Emoji"),
         ],
     ),
@@ -162,21 +110,16 @@ for group_name, items in BIND_GROUPS:
 
 formatted_menu = "\n".join(lines)
 
+cmd = [
+    "rofi",
+    "-dmenu",
+    "-i",
+    "-p", "⌨️ Keybinds Cheatsheet",
+    "-l", "18",
+    "-theme", THEME_PATH
+]
+
 try:
-    subprocess.run(
-        [
-            "rofi",
-            "-dmenu",
-            "-i",
-            "-p",
-            "⌨️ Hyprland Keybinds Cheatsheet",
-            "-l",
-            "18",
-            "-theme-str",
-            ROFI_THEME,
-        ],
-        input=formatted_menu,
-        text=True,
-    )
+    subprocess.run(cmd, input=formatted_menu, text=True)
 except Exception:
     sys.exit(0)
