@@ -69,11 +69,17 @@ dotfiles config --local status.showUntrackedFiles no
 dotfiles checkout
 ```
 
-> **Note:** If checkout reports conflicts due to default generated files, back them up and checkout again:
-> ```fish
-> dotfiles checkout 2>&1 | grep -E "\s+\." | awk '{print $1}' | xargs -I{} mv {} {}.bak
-> dotfiles checkout
-> ```
+> **Note:** If `dotfiles checkout` reports conflicts due to existing default config files:
+> - To force overwrite default configs with your dotfiles:
+>   ```fish
+>   dotfiles checkout -f
+>   ```
+> - Or to backup conflicting default files before checking out:
+>   ```fish
+>   dotfiles checkout 2>&1 | grep -E "^\s+\." | awk '{print $1}' | xargs -I{} mv {} {}.bak
+>   dotfiles checkout
+>   ```
+
 
 ### 3. Restore Software Packages
 
