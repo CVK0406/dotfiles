@@ -63,7 +63,7 @@ caelestia install
 Clone this repository using the bare Git repository method to restore your configuration files and package lists:
 
 ```fish
-git clone --bare git@github.com:CVK0406/dotfiles.git $HOME/.dotfiles
+git clone --bare https://github.com/CVK0406/dotfiles.git $HOME/.dotfiles
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 dotfiles config --local status.showUntrackedFiles no
 dotfiles checkout
