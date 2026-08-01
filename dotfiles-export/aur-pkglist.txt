@@ -4,5 +4,6 @@ caelestia-cli
 caelestia-firefox-theme
 caelestia-shell
 darkly-bin
+gh-dash
 papirus-folders
 qtengine

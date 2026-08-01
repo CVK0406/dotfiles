@@ -55,6 +55,9 @@ dmemcg-booster
 dmidecode
 dmraid
 dnsmasq
+docker
+docker-buildx
+docker-compose
 dosfstools
 duf
 e2fsprogs
@@ -74,11 +77,13 @@ ffmpegthumbnailer
 file-roller
 fish
 flatpak
+fnm
 foot
 frameworkintegration
 freedownloadmanager
 fsarchiver
 git
+github-cli
 glances
 gnome-keyring
 gparted
@@ -103,8 +108,10 @@ intel-lpmd
 intel-media-driver
 intel-ucode
 iwd
+jdk25-openjdk
 jfsutils
 jq
+lazydocker
 lazygit
 less
 lib32-mesa
@@ -128,6 +135,7 @@ lutris
 lvm2
 man-db
 man-pages
+maven
 mdadm
 meld
 mesa-utils
