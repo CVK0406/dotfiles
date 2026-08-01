@@ -41,7 +41,6 @@ Personal dotfiles for a modern, fluid, and dynamic desktop setup built on **Cach
 │   ├── kdeglobals               # KDE global appearance settings
 │   ├── mimeapps.list            # Default application associations
 │   └── user-dirs.dirs           # XDG user directory mappings
-├── Pictures/Wallpapers/         # Complete wallpaper image collection
 └── dotfiles-export/
     ├── pkglist.txt              # Native official repository packages
     └── aur-pkglist.txt          # Explicitly installed AUR packages
@@ -73,27 +72,28 @@ Restore it on a fresh machine:
 ```fish
 cd ~
 
-# Initialize the repo and point it at the remote
-git init
-git remote add origin https://github.com/CVK0406/dotfiles.git
-git fetch origin
+# Clone the repo as a bare repo at ~/.git
+git clone --bare https://github.com/CVK0406/dotfiles.git ~/.git
+
+# Flip into a non-bare layout: ~/.git is the git dir, $HOME is the work tree
+git config --local core.bare false
+
+# Populate the index + work tree from the latest commit
+git reset --mixed HEAD
 
 # Hide untracked home-directory noise from git status
 git config --local status.showUntrackedFiles no
-
-# Check out your dotfiles into the home directory
-git checkout -b main origin/main
 ```
 
-> **Note:** `git checkout` refuses to overwrite existing default config files. If it reports conflicts:
-> - To force overwrite default configs with your dotfiles:
+> **Note:** `git reset --mixed HEAD` writes your dotfiles into `$HOME`, overwriting default config files in the way. If you'd rather not clobber them:
+> - Back up conflicting defaults first:
 >   ```fish
->   git checkout -f main
+>   git reset --mixed HEAD 2>&1 | grep -E "^\s+\.|^[a-z]" | xargs -I{} mv {} {}.bak
+>   git reset --mixed HEAD
 >   ```
-> - Or to backup conflicting default files before checking out:
+> - Or skip the reset entirely and diff against the repo instead:
 >   ```fish
->   git checkout -b main origin/main 2>&1 | grep -E "^\s+\." | awk '{print $1}' | xargs -I{} mv {} {}.bak
->   git checkout main
+>   git diff HEAD -- <path>
 >   ```
 
 
@@ -112,7 +112,7 @@ paru -S --needed - < ~/dotfiles-export/aur-pkglist.txt
 ### 4. Wallpapers & Scheme Generation
 
 
-Restore your wallpaper collection and generate your initial dynamic Caelestia color scheme:
+Wallpapers are **not** tracked in git (large binaries — see `.gitignore`), so copy your collection into `~/Pictures/Wallpapers/` yourself, then generate your initial dynamic Caelestia color scheme:
 
 ```fish
 caelestia wallpaper -f ~/Pictures/Wallpapers/<your-favorite-wallpaper>
