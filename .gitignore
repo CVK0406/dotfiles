@@ -1,2 +1,66 @@
 # Wallpapers are large binaries — keep them out of the repo
 Pictures/Wallpapers/
+
+# ---- browser/app caches: thousands of files, pure junk ----
+.config/**/Cache/
+.config/**/Cache_Data/
+.config/**/CachedData/
+.config/**/Code Cache/
+.config/**/GPUCache/
+.config/**/Dawn*/
+.config/**/Crashpad/
+.config/**/logs/
+.config/**/log/
+.config/**/Blob Storage/
+.config/**/Shared Storage/
+.config/**/Session Storage/
+.config/**/Local Storage/
+.config/**/Service Worker/
+.config/**/WebStorage/
+.config/**/Shared Dictionary/
+.config/**/Trust Tokens/
+.config/**/DIPS/
+.config/**/TransportSecurity/
+.config/**/Network Persistent State/
+.config/**/Cookies*
+.config/**/Preferences
+.config/**/History*
+.config/**/Profiles/
+.config/**/CachedProfilesData/
+.config/**/store_cache/
+
+# ---- full app installs / browser profiles: machine-specific, huge ----
+.config/firefox/
+.config/zen/
+.config/BraveSoftware/
+.config/google-chrome/
+.config/discord/
+.config/Antigravity IDE/
+.config/BetterDiscord/
+.config/heroic/tools/
+.config/heroic/store/
+.config/heroic/store_cache/
+.config/libreoffice/
+
+# ---- secrets / machine state: never commit ----
+.config/gh/hosts.yml
+.config/gh/config.yml
+.config/pulse/cookie
+.config/dconf/
+.config/session/
+.config/ibus/bus/
+.config/fcitx/dbus/
+.config/go/telemetry/
+.config/git/ignore
+.config/micro/buffers/
+.config/configstore/
+.config/shelly/appimage-metadata-v2.db
+.config/.updaterId
+
+# ---- binary / sqlite state ----
+**/*.sqlite*
+**/*.db
+**/*.lz4
+**/*.log
+**/datareporting/
+**/sentry/
