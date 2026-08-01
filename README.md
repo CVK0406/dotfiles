@@ -66,24 +66,34 @@ caelestia install
 
 ### 2. Clone & Checkout Dotfiles
 
-Clone this repository using the bare Git repository method to restore your configuration files and package lists:
+This repository uses a **non-bare Git layout**: the Git directory lives at `~/.git` and your home directory is the working tree, so config files stay in their real locations (`~/.config/...`) while being version-controlled.
+
+Restore it on a fresh machine:
 
 ```fish
-git clone --bare https://github.com/CVK0406/dotfiles.git $HOME/.dotfiles
-alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-dotfiles config --local status.showUntrackedFiles no
-dotfiles checkout
+cd ~
+
+# Initialize the repo and point it at the remote
+git init
+git remote add origin https://github.com/CVK0406/dotfiles.git
+git fetch origin
+
+# Hide untracked home-directory noise from git status
+git config --local status.showUntrackedFiles no
+
+# Check out your dotfiles into the home directory
+git checkout -b main origin/main
 ```
 
-> **Note:** If `dotfiles checkout` reports conflicts due to existing default config files:
+> **Note:** `git checkout` refuses to overwrite existing default config files. If it reports conflicts:
 > - To force overwrite default configs with your dotfiles:
 >   ```fish
->   dotfiles checkout -f
+>   git checkout -f main
 >   ```
 > - Or to backup conflicting default files before checking out:
 >   ```fish
->   dotfiles checkout 2>&1 | grep -E "^\s+\." | awk '{print $1}' | xargs -I{} mv {} {}.bak
->   dotfiles checkout
+>   git checkout -b main origin/main 2>&1 | grep -E "^\s+\." | awk '{print $1}' | xargs -I{} mv {} {}.bak
+>   git checkout main
 >   ```
 
 
@@ -116,7 +126,7 @@ hyprctl reload
 
 This repository includes custom Fish shell aliases for easy management:
 
-- `dotfiles`: Interacting with the bare Git repository (e.g. `dotfiles status`, `dotfiles add <file>`).
+- `dotfiles`: Alias for `git`, running against the repo at `~/.git` (e.g. `dotfiles status`, `dotfiles add <file>`).
 - `dots-sync`: One-command sync that updates package lists, stages changes, commits, and pushes to remote.
 
 ### Syncing Changes:
@@ -127,5 +137,4 @@ dots-sync
 ### Pulling Updates on Another Machine:
 ```fish
 dotfiles pull
-dotfiles checkout
 ```
