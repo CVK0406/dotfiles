@@ -78,22 +78,21 @@ git clone --bare https://github.com/CVK0406/dotfiles.git ~/.git
 # Flip into a non-bare layout: ~/.git is the git dir, $HOME is the work tree
 git config --local core.bare false
 
-# Populate the index + work tree from the latest commit
-git reset --mixed HEAD
+# Set commit identity (fresh clones have none)
+git config --local user.name "CVK0406"
+git config --local user.email "khoiche0@gmail.com"
+
+# Force the work tree to match the latest commit
+# (overwrites default/conflicting config files in ~/ — back up first if needed)
+git reset --hard HEAD
 
 # Hide untracked home-directory noise from git status
 git config --local status.showUntrackedFiles no
 ```
 
-> **Note:** `git reset --mixed HEAD` writes your dotfiles into `$HOME`, overwriting default config files in the way. If you'd rather not clobber them:
-> - Back up conflicting defaults first:
+> **Note:** `git reset --hard HEAD` overwrites any existing config files in `~/` with the repo versions. If you'd rather keep local versions of specific files, copy them aside first:
 >   ```fish
->   git reset --mixed HEAD 2>&1 | grep -E "^\s+\.|^[a-z]" | xargs -I{} mv {} {}.bak
->   git reset --mixed HEAD
->   ```
-> - Or skip the reset entirely and diff against the repo instead:
->   ```fish
->   git diff HEAD -- <path>
+>   cp ~/.config/fish/config.fish ~/config.fish.bak
 >   ```
 
 
