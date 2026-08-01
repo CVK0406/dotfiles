@@ -1,7 +1,7 @@
 # App {{{
 
 [app]
-overall = { fg = "#c6c6c6", bg = "#0e0e0e" }
+overall = { fg = "#fbfff8", bg = "#121412" }
 
 # }}}
 
@@ -9,30 +9,30 @@ overall = { fg = "#c6c6c6", bg = "#0e0e0e" }
 # Manager {{{
 
 [mgr]
-cwd = { fg = "#e7e5e8" }
+cwd = { fg = "#fdfeff" }
 
 # Find
-find_keyword  = { fg = "#e7e5e8", bold = true, italic = true, underline = true }
-find_position = { fg = "#c6c6c6", bg = "#0e0e0e", bold = true, italic = true }
+find_keyword  = { fg = "#fdfeff", bold = true, italic = true, underline = true }
+find_position = { fg = "#fbfff8", bg = "#121412", bold = true, italic = true }
 
 # Symlink
-symlink_target = { fg = "#e5e5e5", italic = true }
+symlink_target = { fg = "#e2e3de", italic = true }
 
 # Marker
-marker_copied   = { fg = "#c6c6c6", bg = "#c6c6c6" }
-marker_cut      = { fg = "#e7e5e8", bg = "#e7e5e8" }
-marker_marked   = { fg = "#e7e5e8", bg = "#e7e5e8" }
-marker_selected = { fg = "#e7e5e8", bg = "#e7e5e8" }
+marker_copied   = { fg = "#fbfff8", bg = "#fbfff8" }
+marker_cut      = { fg = "#fdfeff", bg = "#fdfeff" }
+marker_marked   = { fg = "#fdfeff", bg = "#fdfeff" }
+marker_selected = { fg = "#fdfeff", bg = "#fdfeff" }
 marker_symbol   = "│"
 
 # Count
-count_copied   = { fg = "#e5e5e5", bg = "#0e0e0e" }
-count_cut      = { fg = "#e5e5e5", bg = "#0e0e0e" }
-count_selected = { fg = "#e5e5e5", bg = "#0e0e0e" }
+count_copied   = { fg = "#e2e3de", bg = "#121412" }
+count_cut      = { fg = "#e2e3de", bg = "#121412" }
+count_selected = { fg = "#e2e3de", bg = "#121412" }
 
 # Border
 border_symbol = "│"
-border_style  = { fg = "#e5e5e5" }
+border_style  = { fg = "#e2e3de" }
 
 # Highlighting
 syntect_theme = "~/.config/yazi/theme/current_syntect.tmTheme"
@@ -42,8 +42,8 @@ syntect_theme = "~/.config/yazi/theme/current_syntect.tmTheme"
 # Tabs {{{
 
 [tabs]
-active   = { fg = "#c6c6c6", bg = "#0e0e0e", bold = true }
-inactive = { fg = "#e5e5e5", bg = "#0e0e0e" }
+active   = { fg = "#fbfff8", bg = "#121412", bold = true }
+inactive = { fg = "#e2e3de", bg = "#121412" }
 
 # Separator
 sep_inner = { open = "", close = "" }
@@ -55,16 +55,16 @@ sep_outer = { open = "", close = "" }
 # Mode {{{
 
 [mode]
-normal_main = { fg = "#0e0e0e", bg = "#c6c6c6", bold = true }
-normal_alt  = { fg = "#c6c6c6", bg = "#0e0e0e" }
+normal_main = { fg = "#121412", bg = "#fbfff8", bold = true }
+normal_alt  = { fg = "#fbfff8", bg = "#121412" }
 
 # Select mode
-select_main = { fg = "#0e0e0e", bg = "#e7e5e8", bold = true }
-select_alt  = { fg = "#e7e5e8", bg = "#0e0e0e" }
+select_main = { fg = "#121412", bg = "#fdfeff", bold = true }
+select_alt  = { fg = "#fdfeff", bg = "#121412" }
 
 # Unset mode
-unset_main = { fg = "#0e0e0e", bg = "#e7e5e8", bold = true }
-unset_alt  = { fg = "#e7e5e8", bg = "#0e0e0e" }
+unset_main = { fg = "#121412", bg = "#fdfeff", bold = true }
+unset_alt  = { fg = "#fdfeff", bg = "#121412" }
 
 # }}}
 
@@ -72,9 +72,9 @@ unset_alt  = { fg = "#e7e5e8", bg = "#0e0e0e" }
 # Indicator of hovered file {{{
 
 [indicator]
-parent  = { reversed = true, fg = "#c6c6c6" }
-current = { reversed = true, fg = "#c6c6c6" }
-preview = { underline = true, fg = "#c6c6c6" }
+parent  = { reversed = true, fg = "#fbfff8" }
+current = { reversed = true, fg = "#fbfff8" }
+preview = { underline = true, fg = "#fbfff8" }
 padding = { open = "", close = "" }
 
 # }}}
@@ -83,21 +83,21 @@ padding = { open = "", close = "" }
 # Status bar {{{
 
 [status]
-overall   = { fg = "#e5e5e5", bg = "#0e0e0e" }
+overall   = { fg = "#e2e3de", bg = "#121412" }
 sep_left  = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
 # Permissions
-perm_sep   = { fg = "#e5e5e5" }
-perm_type  = { fg = "#e7e5e8" }
-perm_read  = { fg = "#e7e5e8" }
-perm_write = { fg = "#e7e5e8" }
-perm_exec  = { fg = "#e7e5e8" }
+perm_sep   = { fg = "#e2e3de" }
+perm_type  = { fg = "#fdfeff" }
+perm_read  = { fg = "#fdfeff" }
+perm_write = { fg = "#fdfeff" }
+perm_exec  = { fg = "#fdfeff" }
 
 # Progress
 progress_label  = { bold = true }
-progress_normal = { fg = "#e7e5e8", bg = "#0e0e0e" }
-progress_error  = { fg = "#e7e5e8", bg = "#0e0e0e" }
+progress_normal = { fg = "#fdfeff", bg = "#121412" }
+progress_error  = { fg = "#fdfeff", bg = "#121412" }
 
 # }}}
 
@@ -106,12 +106,12 @@ progress_error  = { fg = "#e7e5e8", bg = "#0e0e0e" }
 
 [which]
 cols            = 3
-mask            = { bg = "#0e0e0e" }
-cand            = { fg = "#e7e5e8" }
-rest            = { fg = "#e5e5e5" }
-desc            = { fg = "#c6c6c6" }
+mask            = { bg = "#121412" }
+cand            = { fg = "#fdfeff" }
+rest            = { fg = "#e2e3de" }
+desc            = { fg = "#fbfff8" }
 separator       = "  "
-separator_style = { fg = "#e5e5e5" }
+separator_style = { fg = "#e2e3de" }
 
 # }}}
 
@@ -119,12 +119,12 @@ separator_style = { fg = "#e5e5e5" }
 # Confirmation {{{
 
 [confirm]
-border     = { fg = "#c6c6c6" }
-title      = { fg = "#c6c6c6" }
-body       = { fg = "#e5e5e5" }
-list       = { fg = "#e5e5e5" }
-btn_yes    = { reversed = true, fg = "#c6c6c6" }
-btn_no     = { fg = "#e5e5e5" }
+border     = { fg = "#fbfff8" }
+title      = { fg = "#fbfff8" }
+body       = { fg = "#e2e3de" }
+list       = { fg = "#e2e3de" }
+btn_yes    = { reversed = true, fg = "#fbfff8" }
+btn_no     = { fg = "#e2e3de" }
 btn_labels = [ "  [Y]es  ", "  (N)o  " ]
 
 # }}}
@@ -133,12 +133,12 @@ btn_labels = [ "  [Y]es  ", "  (N)o  " ]
 # Spotter {{{
 
 [spot]
-border = { fg = "#c6c6c6" }
-title  = { fg = "#c6c6c6" }
+border = { fg = "#fbfff8" }
+title  = { fg = "#fbfff8" }
 
 # Table
-tbl_col  = { fg = "#e5e5e5" }
-tbl_cell = { fg = "#e7e5e8", reversed = true }
+tbl_col  = { fg = "#e2e3de" }
+tbl_cell = { fg = "#fdfeff", reversed = true }
 
 # }}}
 
@@ -146,9 +146,9 @@ tbl_cell = { fg = "#e7e5e8", reversed = true }
 # Notification {{{
 
 [notify]
-title_info  = { fg = "#e7e5e8" }
-title_warn  = { fg = "#e7e5e8" }
-title_error = { fg = "#e7e5e8" }
+title_info  = { fg = "#fdfeff" }
+title_warn  = { fg = "#fdfeff" }
+title_error = { fg = "#fdfeff" }
 
 # Icons
 icon_info  = ""
@@ -161,9 +161,9 @@ icon_error = ""
 # Picker {{{
 
 [pick]
-border   = { fg = "#c6c6c6" }
-active   = { fg = "#c6c6c6", bold = true }
-inactive = { fg = "#e5e5e5" }
+border   = { fg = "#fbfff8" }
+active   = { fg = "#fbfff8", bold = true }
+inactive = { fg = "#e2e3de" }
 
 # }}}
 
@@ -171,10 +171,10 @@ inactive = { fg = "#e5e5e5" }
 # Input {{{
 
 [input]
-border   = { fg = "#c6c6c6" }
-title    = { fg = "#e5e5e5" }
-value    = { fg = "#e5e5e5" }
-selected = { reversed = true, fg = "#c6c6c6" }
+border   = { fg = "#fbfff8" }
+title    = { fg = "#e2e3de" }
+value    = { fg = "#e2e3de" }
+selected = { reversed = true, fg = "#fbfff8" }
 
 # }}}
 
@@ -182,9 +182,9 @@ selected = { reversed = true, fg = "#c6c6c6" }
 # Completion {{{
 
 [cmp]
-border   = { fg = "#c6c6c6" }
-active   = { reversed = true, fg = "#c6c6c6" }
-inactive = { fg = "#e5e5e5" }
+border   = { fg = "#fbfff8" }
+active   = { reversed = true, fg = "#fbfff8" }
+inactive = { fg = "#e2e3de" }
 
 # Icons
 icon_file    = ""
@@ -197,9 +197,9 @@ icon_command = ""
 # Task manager {{{
 
 [tasks]
-border  = { fg = "#c6c6c6" }
-title   = { fg = "#e5e5e5" }
-hovered = { fg = "#c6c6c6", bold = true }
+border  = { fg = "#fbfff8" }
+title   = { fg = "#e2e3de" }
+hovered = { fg = "#fbfff8", bold = true }
 
 # }}}
 
@@ -207,11 +207,11 @@ hovered = { fg = "#c6c6c6", bold = true }
 # Help menu {{{
 
 [help]
-on      = { fg = "#e7e5e8" }
-run     = { fg = "#c6c6c6" }
-desc    = { fg = "#e5e5e5" }
-hovered = { reversed = true, bold = true, fg = "#c6c6c6" }
-footer  = { fg = "#0e0e0e", bg = "#e5e5e5" }
+on      = { fg = "#fdfeff" }
+run     = { fg = "#fbfff8" }
+desc    = { fg = "#e2e3de" }
+hovered = { reversed = true, bold = true, fg = "#fbfff8" }
+footer  = { fg = "#121412", bg = "#e2e3de" }
 
 # }}}
 
@@ -221,9 +221,9 @@ footer  = { fg = "#0e0e0e", bg = "#e5e5e5" }
 [filetype]
 rules = [
 	# directories
-	{ url = "*/", fg = "#c6c6c6"},
+	{ url = "*/", fg = "#fbfff8"},
     # files
-	{ url = "*", fg = "#c6c6c6"}
+	{ url = "*", fg = "#fbfff8"}
 ]
 
 # }}}
@@ -239,10 +239,10 @@ conds = [
 	{ if = "sticky", text = ""},
 
 	# Fallback
-	{ if = "dir & hovered", text = "", fg = "#c6c6c6"},
-	{ if = "dir", text = "", fg = "#c6c6c6"},
-	{ if = "exec", text = "", fg = "#c6c6c6"},
-	{ if = "!dir", text = "", fg = "#c6c6c6"}
+	{ if = "dir & hovered", text = "", fg = "#fbfff8"},
+	{ if = "dir", text = "", fg = "#fbfff8"},
+	{ if = "exec", text = "", fg = "#fbfff8"},
+	{ if = "!dir", text = "", fg = "#fbfff8"}
 ]
 
 globs = []

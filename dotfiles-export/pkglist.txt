@@ -40,6 +40,7 @@ cachyos-zsh-config
 cantarell-fonts
 cava
 chwd
+claude-code
 cliphist
 cloudflare-warp-bin
 cmake
@@ -143,9 +144,9 @@ nilfs-utils
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
+npm
 nss-mdns
 opencl-mesa
-opencode
 openssh
 os-prober
 pacman-contrib
