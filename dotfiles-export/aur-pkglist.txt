@@ -1,7 +1,6 @@
 9router-bin
 antigravity-ide
 caelestia-cli
-caelestia-firefox-theme
 caelestia-shell
 darkly-bin
 gh-dash
