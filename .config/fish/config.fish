@@ -44,6 +44,7 @@ if status is-interactive
     set -q XDG_CONFIG_HOME && set -l cConf $XDG_CONFIG_HOME/caelestia || set -l cConf $HOME/.config/caelestia
     source $cConf/user-config.fish 2> /dev/null
 end
+fish_add_path ~/.cargo/bin
 alias matrix 'rusty-rain -s -g jap -C 0,60,150 -H white -S 10,180'
 alias dotfiles 'git'
 alias dots-sync 'pacman -Qqen > ~/dotfiles-export/pkglist.txt && pacman -Qqem > ~/dotfiles-export/aur-pkglist.txt && dotfiles add -u && dotfiles commit -m "sync $(date +%F)" && dotfiles push'
