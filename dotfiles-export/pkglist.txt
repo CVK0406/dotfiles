@@ -20,6 +20,7 @@ btop
 btrfs-assistant
 btrfs-progs
 cachyos-fish-config
+cachyos-gaming-applications
 cachyos-gaming-meta
 cachyos-grub-theme
 cachyos-hello
@@ -82,6 +83,7 @@ foot
 frameworkintegration
 freedownloadmanager
 fsarchiver
+gamescope
 git
 github-cli
 glances
@@ -131,7 +133,6 @@ localsend
 logrotate
 lsb-release
 lsscsi
-lutris
 lvm2
 man-db
 man-pages
@@ -193,7 +194,6 @@ smartmontools
 snapper
 sof-firmware
 starship
-steam
 sudo
 sysfsutils
 terminus-font
