@@ -48,6 +48,7 @@ fish_add_path ~/.cargo/bin
 alias matrix 'rusty-rain -s -g jap -C 30,110,200 -H white -S 10,180'
 alias dotfiles 'git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
-alias dots-sync 'pacman -Qqen > ~/dotfiles-export/pkglist.txt && pacman -Qqem > ~/dotfiles-export/aur-pkglist.txt && dotfiles add -A && dotfiles commit -m "sync $(date +%F)" && dotfiles push'
+alias dots-sync 'pacman -Qqen > ~/dotfiles-export/pkglist.txt && pacman -Qqem > ~/dotfiles-export/aur-pkglist.txt && dotfiles add -u && dotfiles commit -m "sync $(date +%F)" && dotfiles push'
+
 
 fnm env --use-on-cd | source
