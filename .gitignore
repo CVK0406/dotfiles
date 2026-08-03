@@ -1,7 +1,29 @@
-# Wallpapers are large binaries — keep them out of the repo
-Pictures/Wallpapers/
+# ==============================================================================
+# Dotfiles .gitignore Configuration
+# ==============================================================================
 
-# ---- browser/app caches: thousands of files, pure junk ----
+# ---- User Directories & Media ----
+Downloads/
+Desktop/
+Documents/
+Videos/
+Music/
+
+# ---- Build Artifacts, Package Managers & Caches ----
+.cache/
+.local/share/
+.cargo/
+.rustup/
+.npm/
+.node_repl_history
+.pnpm-store/
+.fnm/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ---- System & App Caches / Logs ----
 .config/**/Cache/
 .config/**/Cache_Data/
 .config/**/CachedData/
@@ -29,7 +51,7 @@ Pictures/Wallpapers/
 .config/**/CachedProfilesData/
 .config/**/store_cache/
 
-# ---- full app installs / browser profiles: machine-specific, huge ----
+# ---- Machine-Specific Profiles & Heavy Apps ----
 .config/firefox/
 .config/zen/
 .config/BraveSoftware/
@@ -42,8 +64,14 @@ Pictures/Wallpapers/
 .config/heroic/store_cache/
 .config/libreoffice/
 
-# ---- secrets / machine state: never commit ----
+# ---- Credentials, Secrets & Machine State ----
 .9router/
+.ssh/
+.gnupg/
+*.pem
+*.key
+.env
+.env.*
 .config/gh/hosts.yml
 .config/gh/config.yml
 .config/pulse/cookie
@@ -58,10 +86,13 @@ Pictures/Wallpapers/
 .config/shelly/appimage-metadata-v2.db
 .config/.updaterId
 
-# ---- binary / sqlite state ----
+# ---- Binary State & Temporary Files ----
 **/*.sqlite*
 **/*.db
 **/*.lz4
 **/*.log
+**/*.tmp
+**/*.swp
+**/*.bak
 **/datareporting/
 **/sentry/
