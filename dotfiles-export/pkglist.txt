@@ -20,8 +20,6 @@ btop
 btrfs-assistant
 btrfs-progs
 cachyos-fish-config
-cachyos-gaming-applications
-cachyos-gaming-meta
 cachyos-grub-theme
 cachyos-hello
 cachyos-hooks
@@ -83,7 +81,6 @@ foot
 frameworkintegration
 freedownloadmanager
 fsarchiver
-gamescope
 git
 github-cli
 glances
@@ -174,7 +171,6 @@ plymouth
 polkit-gnome
 poppler-glib
 power-profiles-daemon
-protonup-qt
 pv
 python
 python-defusedxml
@@ -219,6 +215,7 @@ uwsm
 vlc-plugins-all
 vpl-gpu-rt
 vulkan-intel
+wayland-utils
 wget
 which
 wireplumber
@@ -230,6 +227,7 @@ xdg-desktop-portal-hyprland
 xdg-user-dirs
 xfsprogs
 xl2tpd
+xorg-xdpyinfo
 xorg-xhost
 yazi
 ydotool

@@ -43,6 +43,7 @@ Pictures/Wallpapers/
 .config/libreoffice/
 
 # ---- secrets / machine state: never commit ----
+.9router/
 .config/gh/hosts.yml
 .config/gh/config.yml
 .config/pulse/cookie
