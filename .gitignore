@@ -52,6 +52,14 @@ venv/
 .config/**/store_cache/
 
 # ---- Machine-Specific Profiles & Heavy Apps ----
+.config/caelestia/monitors/
+.config/fish/fish_variables
+.config/fcitx5/conf/cached_layouts
+.config/heroic/
+.config/bleachbit/
+.config/cachyos/
+.config/gtk-4.0/thumbnail.png
+.config/.gsd-keyboard.settings-ported
 .config/firefox/
 .config/zen/
 .config/BraveSoftware/
@@ -59,10 +67,8 @@ venv/
 .config/discord/
 .config/Antigravity IDE/
 .config/BetterDiscord/
-.config/heroic/tools/
-.config/heroic/store/
-.config/heroic/store_cache/
 .config/libreoffice/
+
 
 # ---- Credentials, Secrets & Machine State ----
 .9router/
