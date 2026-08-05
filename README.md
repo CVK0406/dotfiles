@@ -21,6 +21,11 @@ Personal dotfiles for a modern, fluid, and dynamic desktop setup built on **Cach
 
 ```text
 .
+├── .bashrc & .bash_profile      # Bash shell environment startup configs
+├── .zshrc                       # Zsh shell configuration
+├── .gitconfig                   # Global Git user configuration & credential helpers
+├── .gemini/
+│   └── GEMINI.md                # Gemini AI workspace instructions & custom rules
 ├── .config/
 │   ├── hypr/                    # Hyprland Lua window manager configs & scripts
 │   ├── caelestia/               # Caelestia shell, variables, and user overrides
@@ -34,6 +39,7 @@ Personal dotfiles for a modern, fluid, and dynamic desktop setup built on **Cach
 │   ├── cava/                    # Cava audio visualizer config & shaders
 │   ├── micro/                   # Micro text editor keybinds & settings
 │   ├── yazi/                    # Yazi terminal file manager config & themes
+│   ├── lazygit/                 # Lazygit terminal UI configuration
 │   ├── Thunar/                  # Thunar file manager shortcuts & custom actions
 │   ├── gtk-3.0/ & gtk-4.0/      # GTK themes and custom CSS styling
 │   ├── qt5ct/, qt6ct/, qtengine/# Qt theme engine configs
@@ -41,6 +47,7 @@ Personal dotfiles for a modern, fluid, and dynamic desktop setup built on **Cach
 │   ├── kdeglobals               # KDE global appearance settings
 │   ├── mimeapps.list            # Default application associations
 │   └── user-dirs.dirs           # XDG user directory mappings
+├── Pictures/Wallpapers/         # Complete wallpaper image collection
 └── dotfiles-export/
     ├── pkglist.txt              # Native official repository packages
     └── aur-pkglist.txt          # Explicitly installed AUR packages
